@@ -1,0 +1,128 @@
+.dialog {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    border-radius: 10px;
+    color: var(--white);
+    padding: 10px;
+}
+
+.dialog::backdrop {
+    background-color: var(--dialog-background);
+}
+
+.dialog__content {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--black);
+    height: auto;
+    width: 450px;
+    max-height: 80vh;
+    border-radius: 10px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: none;
+    /* border: 1px solid var(--modal-primary-text-color); */
+    outline: none;
+    box-shadow: 0 0 5px var(--primary-color);
+    margin-top: 10px;
+}
+
+.dialog__header {
+    position: relative;
+    grid-template-columns: 3fr .5fr;
+    color: var(--white);
+    text-shadow: 0 0 10px var(--primary-color);
+    font-size: 1.4rem;
+    border: none;
+}
+
+.dialog__title {
+    margin: 0;
+    text-align: center;
+}
+
+.dialog__close_container {
+    display: inline-flex;
+    position: absolute;
+    top: 50%;
+    left: calc(100% - 40px);
+    transform: translateY(-50%);
+}
+
+.dialog__close {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: inherit;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.dialog__close::before,
+.dialog__close::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 3px;
+    border-radius: 10px;
+    background-color: var(--white);
+    box-shadow: 0 0 5px var(--primary-color);
+    transform-origin: center;
+}
+
+.dialog__close:hover::before,
+.dialog__close:hover::after {
+    background-color: var(--primary-color);
+    box-shadow: 0 0 5px var(--white);
+}
+
+.dialog__close::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.dialog__close::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.dialog__dynamic-content {
+    /* background-image: linear-gradient(to bottom, var(--dialog-black-gradient) 0%, var(--dialog-dark-blue-gradient) 40%, var(--dialog-black-gradient) 100%); */
+    padding: 20px;
+}
+
+body:has(.dialog[open]) {
+    overflow: hidden;
+}
+
+@media screen and (width < 600px) {
+
+    .dialog__content {
+        width: 400px;
+    }
+
+    .dialog__dynamic-content {
+        padding: 15px;
+    }
+
+    .dialog__title {
+        font-size: 1.5rem;
+        padding: 8px;
+    }
+}
+
+@media screen and (width < 450px) {
+    .dialog__content {
+        width: 280px;
+    }
+
+    .dialog__dynamic-content {
+        padding: 5px;
+    }
+
+    .dialog__title {
+        font-size: 1.2rem;
+    }
+}

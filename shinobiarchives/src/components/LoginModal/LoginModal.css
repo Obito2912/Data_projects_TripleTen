@@ -1,0 +1,13 @@
+.modal__form.login__form input[type=email] {
+    margin: 8px 0 24px;
+}
+
+.modal__form.login__form input[type=password] {
+    margin-top: 8px;
+}
+
+@media screen and (width < 600px) {
+    .modal__form.login__form input[type=email] {
+        margin: 8px 0 15px;
+    }
+}

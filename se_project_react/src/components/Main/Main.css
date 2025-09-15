@@ -1,0 +1,26 @@
+.cards__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    gap: 21px;
+}
+
+.card {
+    cursor: pointer;
+}
+
+.card__image {
+    border-radius: 20px;
+}
+
+.cards__text {
+    font-weight: bold;
+}
+
+.card__name {
+    background-color: #fff;
+    padding: 0 12px;
+    border-radius: 4px;
+}

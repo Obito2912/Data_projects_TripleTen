@@ -1,0 +1,34 @@
+.char-modal {
+    border: none;
+}
+
+.char-modal__img {
+    width: 350px;
+    height: 270px;
+    border-radius: 10px;
+    display: block;
+    margin-inline: auto;
+    height: auto;
+}
+
+.char-modal__title {
+    margin: 10px 0;
+    color: var(--modal-primary-text-color);
+}
+
+.char-modal__key {
+    color: var(--dialog-highlight);
+    margin: 0;
+}
+
+.char-modal__value {
+    color: var(--modal-primary-text-color);
+    font-weight: 200;
+}
+
+@media screen and (width < 600px) {
+    .char-modal__img {
+        width: 260px;
+        height: auto;
+    }
+}

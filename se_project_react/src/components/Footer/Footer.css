@@ -1,0 +1,11 @@
+.footer__content {
+    display: flex;
+    justify-content: space-between;
+    margin: 85px 0 24px;
+}
+
+.footer__developer,
+.footer__year {
+    margin: 0;
+    font-weight: 600;
+}
